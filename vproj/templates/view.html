@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+<h1> Categories </h1>
+
+{% for d in category %}
+	 {{ d.name }}
+	 <t>
+	 {{ d.category_id }}
+	 <br>
+{% endfor %}
+</center>	
+
+<center>
+<h1> Authors </h1>
+
+{% for d in author %}
+	 {{ d.first_name }} {{d.last_name}}
+	 <t>
+	 {{ d.author_id }}
+	 <br>
+{% endfor %}
+
+<h1> Publishers </h1>
+<center>
+{% for d in publisher %}
+	 {{ d.name }}
+	 <t>
+	 {{ d.publisher_id }}
+	 <br>
+{% endfor %}
+</center>
+
+<h1>Books</h1>
+{% for d in book %}
+	{{ d.book_id}}
+	<t>
+	{{ d.name }}
+	<t>
+	{{ d.isbn_no }}
+	<t>
+	{{ d.rating }}
+	<t>
+	{{ d.no_of_copies }}
+	<br>
+{% endfor %}
+
+<h1> Members </h1>
+{% for d in member %}
+	{{ d.member_id }}
+	<t>
+	{{d.first_name}} {{d.last_name}}
+	<t>
+	{{ d.phone }}
+	<br>
+{% endfor %}
+
+
+<h1>Book Category</h1>
+{% for d in has_category %}
+	{{d.book_id}} has category {{d.category_id}}
+	<br>
+{% endfor %}
+
+<h1>Compiled by</h1>
+{% for d in compiled_by %}
+	{{ d.book_id }} written by {{ d.author_id}} published by {{ d.publisher_id }}
+{% endfor %}
+</body>
+</html>

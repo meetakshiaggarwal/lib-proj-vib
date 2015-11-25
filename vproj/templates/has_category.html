@@ -1,0 +1,60 @@
+{% extends "dashboard_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+<h1 class="page-header">Add a Book & Category Info</h1>
+
+<form method='POST' class='uniForm' action=''>{% csrf_token %}
+	
+	{{ form|crispy }}
+
+<input type='submit' value='Add'>
+
+</form>
+
+{% endblock %}
+
+{% block sidebar %}
+    <div class="col-sm-3 col-md-2 sidebar">  
+      <ul class="nav nav-sidebar">
+        <li ><a href="/dashboard">Overview <span class="sr-only">(current)</span></a></li>
+        <li ><a href="/view_books">Books</a></li>
+          <ul>
+            <li><a href="/add_book">Add a book</a></li>
+            <li><a href="/add_book_copy">Add a book copy</a></li>
+          </ul>
+        <li><a href="/view_members">Members</a></li>
+          <ul>
+            <li><a href="/add_member">Add a member</a></li>
+          </ul>
+        <li><a href="/view_publishers">Publishers</a></li>
+          <ul>
+            <li><a href="/add_publisher">Add a publisher</a></li>
+          </ul>
+        <li ><a href="/view_authors">Authors</a></li>
+          <ul>
+            <li><a href="/add_author">Add a author</a></li>
+          </ul>
+        <li ><a href="/view_categories">Categories</a></li>
+          <ul>
+            <li><a href="/add_category">Add a category</a></li>
+          </ul>
+        <li><a href="/view_compiled_by">Compiled by</a></li>
+          <ul>
+            <li><a href="/add_compiled_by">Add book author and publisher info</a></li>
+          </ul>
+        <li class="active"><a href="/view_book_categories">Book & Categories</a></li>
+          <ul>
+            <li><a href="/add_has_category">Add book and category info</a></li>
+          </ul>
+        <li><a href="/view_history">View History</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href="">Issue a Book</a></li>
+        <li><a href="">Return a Book</a></li>
+        <li><a href="">View Due Books</a></li>
+      </ul>
+    </div>
+{% endblock %}
